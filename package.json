@@ -1,8 +1,8 @@
 {
-  "name": "loginkeepmeupapp",
+  "name": "keepmeupXL",
   "version": "1.0.0",
-  "description": "",
-  "main": "application.js",
+  "description": "Soical media dashboard",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

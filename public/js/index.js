@@ -6,7 +6,7 @@ Index.load = function(){
       // });
       $('.ui.dropdown').dropdown();
 
-      $(".header-search .prompt").on("click", function(){
-        alert("not implemented yet, sorry!");
-      })
+      // $(".header-search .prompt").on("click", function(){
+      //   alert("not implemented yet, sorry!");
+      // })
 }
