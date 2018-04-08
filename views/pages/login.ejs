@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/dist/semantic.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-      <title>KeepMeUp</title>
+    <% include ../partials/head.ejs%>
   </head>
   <body>
-    <div id="login" class="ui middle aligned center aligned grid container">
-  <div class="column">
-      <img src="images/keepmeup-logo.png" class="ui centered medium image">
-        <h2 class="ui orange header">Login</h2>
-    <form class="ui large form" method="post" action="/login">
-      <div class="ui stacked segment ">
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-            <input type="text" name="username" placeholder="Username">
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
-          </div>
-        </div>
-        <button class="ui fluid large orange submit button" type="submit" name="button">Login</button>
+      <div id="login" class="ui middle aligned center aligned grid container">
+          <div class="column">
+              <img src="images/keepmeup-logo.png" class="ui centered medium image">
+                <h2 class="ui orange header">Login</h2>
+            <form class="ui large form" method="post" action="/login">
+              <div class="ui stacked segment ">
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="username" placeholder="Username">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="Password">
+                  </div>
+                </div>
+                <button class="ui fluid large orange submit button" type="submit" name="button">Login</button>
+              </div>
+              <div class="ui error message"></div>
+            </form>
+          <div class="ui message">
+              New to us? <a href="/register">Sign Up</a>
+          </div>    
+       </div>
       </div>
-      <div class="ui error message"></div>
-    </form>
-
-    <div class="ui message">
-      New to us? <a href="http://process-latin-3000.codio.io/register">Sign Up</a>
-    </div>
-      
-  </div>
-</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="/dist/semantic.min.js"></script>
+    <footer>
+     <% include ../partials/footer %>
+    </footer>
+    <script src="/js/index.js" type="text/javascript" onload="Index.load()"></script>
   </body>
 </html>
+
 
 
 

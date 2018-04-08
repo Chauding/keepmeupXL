@@ -1,101 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Group13">
-    <link rel="stylesheet" href="/dist/semantic.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      
-    <title>KeepMeUp</title>
-      
-      <style>
-
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 14px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-        transition: margin-left .5s !important;
-    padding: 16px !important;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-  </head>
-  <body>
-
-<div id ="main">
-<div class="sixteen wide column">
- <form class="ui form" method="post" action="/settings">
-
-
-<div class="ui centered grid">
-               
-   <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="http://process-latin-3000.codio.io">Dashboard</a>
-  <a href="http://process-latin-3000.codio.io/privacy">Privacy</a>
-</div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        <div class="ten wide centered column">
-           <div id="settingsMenu" class="ui three item menu">
-              <a class="item active" data-tab="basic">
-              Basic Information
-                </a>
-          <a class="item" data-tab="account">
-              Accounts
-                    </a>
-                     <a class="item" data-tab="addAccount">
-                         Add account
-                     </a>
-                   </div>
-    </div>
-
-    
-             <div class="ten wide column">
-                 <div class="ui tab active" data-tab="basic">
-
-
-                <img class="ui centered small image" src="../images/keepmeup-logo-no-text.png">
-
-
-                     <div class="ui huge center aligned header">Profile</div>
-                     <table class="ui celled table">
+<div id="settings" class="ui centered grid">
+    <div class="ten wide column">
+        <div class="ui tab active" data-tab="basic">
+            <img class="ui centered small image" src="../images/keepmeup-logo-no-text.png">
+                <div class="ui huge center aligned header">Profile</div>
+                    <table class="ui celled table">
                       <tbody>
                         <tr>
                           <td>
@@ -143,17 +51,14 @@
                         </tr>
                       </tbody>
                     </table>
-                         </div>
-                         </div>
-
-                    <br>
-
-                    <div class="ui huge center aligned header">About me</div>
+                  </div>
+                  <br>
+                  <div class="ui huge center aligned header">About me</div>
                     <div class = "ui eight wide center aligned segment">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum arcu quis lorem condimentum posuere. Donec nec nisi mauris. Mauris pretium, ligula lacinia fermentum semper, tortor purus posuere tellus, quis porttitor dui nisi sit amet diam.</p>
                     </div>
-                 <div class="ui tab" data-tab="account">
-                     <br>
+                  <div class="ui tab" data-tab="account">
+                  <br>
                      <div class="ui three column grid">
                        <div class="column">
                          <div class="ui card">
@@ -203,40 +108,19 @@
                              </div>
                            </div>
                            <div class="ui bottom attached red button">
-
                              delete account
                            </div>
                          </div>
                        </div>
-
                      </div>
                  </div>
                  <div class="ui tab" data-tab="addAccount">
-
                       <div id="addAccountContent" class="ui padded centered grid">
                       <div class="twelve wide center aligned column">
                       <h3>Add an account with us!</h3>
                  <div class="field">
                 <p>Choose desired social media, enter your account username and we'll get it linked up!</p>
-
                 </div>
-                <!--
-            <div class="field">
-          <div class="ui input">
-            <input type="text" name="reddit username" placeholder="reddit account ">
-          </div>
-        </div>
-        <br>
-        <div class="field">
-          <div class="ui input">
-            <input type="text" name="instagram username" placeholder="instagram account">
-          </div>
-        </div>
-            <br>
-            <div class="field">
-          <div class="ui input">
-            <input type="text" name="twitter username" placeholder="instagram account">
-          </div> -->
                     <br>
                       <div class="ui padded form">
                         <div class="ui selection dropdown">
@@ -258,30 +142,11 @@
                           <br>
                         </div>
                         <button class=" ui button">Search for Account!&nbsp<i class="fa fa-search"></i></button>
-                     </div>
-                   </div>
-                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-     </div>
-    
-     </form>
-      </div>
-      </div>
-      
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "150px";
-    document.getElementById("main").style.marginLeft = "150px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
+</div>
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
-}
-</script>
-    </body>
-    
-</html>
     

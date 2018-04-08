@@ -1,39 +1,43 @@
-<div class="sixteen wide column">
-<!-- {{#if errors}}
-  {{#each errors}}
-  <div class="alert ui error message">{{msg}}</div>
-  {{/each}}
-{{/if}} -->
-<div class="ui grid padded centered algined ">
-    <link rel="stylesheet" href="/dist/semantic.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-  <form class="ui form" action="/register" method="post">
-  <!-- Put form in here e.g.  -->
-  <div class="field">
-     <label>Name</label>
-     <input type="text" name="name" placeholder="Name">
-   </div>
-   <div class="field">
-     <label>Username</label>
-     <input type="text" name="username" placeholder="Username">
-   </div>
-   <div class="field">
-     <label>Email</label>
-     <input type="email" name="email" placeholder="Email">
-   </div>
-   <div class="field">
-     <label>Password</label>
-     <input type="password" name="password" placeholder="Password">
-   </div>
-   <div class="field">
-     <label>Confirm Password</label>
-     <input type="password" name="password2" placeholder="Confirm Password">
-   </div>
-   <button type="submit" class="ui button" name="button">Get Started! </button>
-      
-        <div class="ui message">
-      Already have an account? <a href="http://process-latin-3000.codio.io/login">Login!</a>
-    </div>
-  </form>
-</div>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs%>
+  </head>
+  <body>
+      <div id="register" class="ui grid padded centered algined ">
+          <form class="ui form" action="/register" method="post">
+              <!-- Put form in here e.g.  -->
+              <div class="field">
+                 <label>Name</label>
+                 <input type="text" name="name" placeholder="Name">
+               </div>
+              <div class="field">
+                 <label>Username</label>
+                 <input type="text" name="username" placeholder="Username">
+                </div>
+              <div class="field">
+                 <label>Email</label>
+                 <input type="email" name="email" placeholder="Email">
+               </div>
+              <div class="field">
+                 <label>Password</label>
+                 <input type="password" name="password" placeholder="Password">
+               </div>
+              <div class="field">
+                 <label>Confirm Password</label>
+                 <input type="password" name="password2" placeholder="Confirm Password">
+               </div>
+              <button type="submit" class="ui button" name="button">Get Started! </button>
+
+              <div class="ui message">
+              Already have an account? <a href="/login">Login!</a>
+               </div>
+          </form>
+        </div>
+    <footer>
+     <% include ../partials/footer %>
+    </footer>
+    <script src="/js/index.js" type="text/javascript" onload="Index.load()"></script>
+  </body>
+</html>
+

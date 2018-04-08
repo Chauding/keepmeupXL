@@ -1,69 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/dist/semantic.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-      <title>KeepMeUp</title>
-           <style>
-
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 14px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-        transition: margin-left .5s !important;
-    padding: 16px !important;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-  </head>
-<body>
-    <div id ="main">
-<div class="ui centered algined grid">
-       <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="http://process-latin-3000.codio.io">Dashboard</a>
-  <a href="http://process-latin-3000.codio.io/settings">Settings</a>
-</div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-     <div class="eight wide column">
-       <form class="ui form" method="push" action="/privacy">
+<div id="privacy" class ="ui padded grid">
            <div class="twelve wide centered column">
               <img class="ui tiny centered image" src="../images/keepmeup-logo.png">
 
@@ -262,27 +197,6 @@
 
                    <p>These Terms constitute the entire understanding of the parties and supersede all prior and contemporaneous written and oral agreements with respect to the subject matter hereof. Any rule of construction stating that ambiguities are to be resolved against the drafting party will not be applied in the construction or interpretation of these Terms. If one or more of the provisions herein shall be held invalid, illegal or unenforceable in any respect, the validity, legality and enforcement of the remaining provisions shall not be affected or impaired. Any inconsistency between these Terms in English and these Terms in any other language shall, to the fullest extent permitted by applicable law, be resolved by reference to the English version. The failure to enforce or the waiver by either party of a default or breach of the other party shall not be considered to be a waiver of any prior, subsequent or other default or breach.</p>
                    <br>
-                  <br>
-          </div>
-         </form>
-    </div>
-    </div>
-    </div>
-  <script>
-      
-function openNav() {
-    document.getElementById("mySidenav").style.width = "150px";
-    document.getElementById("main").style.marginLeft = "150px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
-}
-</script>
-    
-           </body>
-         </html>
+</div>
+ 
     
