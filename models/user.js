@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
-mongoose.connect('mongodb://localhost:27017/keepmeup');
+mongoose.connect('mongodb://localhost:27017/keepmeup', { useMongoClient: true });
 var db = mongoose.connection;
 
 var UserSchema = mongoose.Schema({
