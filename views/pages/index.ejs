@@ -1,61 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Group13">
-    <link rel="stylesheet" href="/dist/semantic.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <title>KeepMeUp</title>
+    <% include ../partials/head.ejs%>
   </head>
   <body>
-    <div class="ui sidebar inverted vertical menu borderless">
-        <a class="item" style="height:45px">
-          <i class="large remove icon"></i>
-        </a>
-        <a href="/" class="item">
-          Dasboard <i class="home icon" style="color: white"></i>
-        </a>
-        <a href="/settings" class="item">
-          Settings <i class="cogs icon" style="color: white"></i>
-        </a>
-         <a href="/privacy" class="item">
-          Privacy <i class="lock icon" style="color: white"></i>
-        </a>
-        <!-- Write jquery to hide these when logged in in or not -->
-        
-        <a href="/login" class="item">
-          Login <i class="sign in alternate icon" style="color: white"></i>
-        </a>
-        <a href="/register" class="item">
-          Register <i class="edit outline icon" style="color: white"></i>
-        </a>
-      </div>
-      <div class="pusher">
-        <div id="navBar" class="ui fixed borderless menu">
-             <div id="burger" href="#" class="item">
-               <i class="content icon white-text" style="color: white"></i>
-             </div>
-             <div class="header-search item">
-               <div class="ui search">
-                  <div class="ui icon input">
-                    <input class="prompt" type="text" placeholder="Common hashtags...">
-                    <i class="search icon"></i>
-                  </div>
-                  <div class="results"></div>
-                </div>
-             </div>
-            <div class="right menu">
-              <a href="#" class="item">
-                <img class="logo" src="../images/keepmeup-logo-no-text.png">
-              </a>
-            </div>
-          </div>
-         <div id="content" class="ui grid">
-           <% include ../pages/dashboard %>
-         </div>
-      </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="/dist/semantic.min.js"></script>
-    <script src="/js/index.js" type="text/javascript" onload="Index.load()"></script>
+    <head>
+      <% include ../partials/header%>
+    </head>
+      <% include ../pages/dashboard %>
+    <footer>
+     <% include ../partials/footer %>
+    </footer>
   </body>
 </html>
