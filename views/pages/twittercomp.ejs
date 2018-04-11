@@ -1,73 +1,21 @@
 <div id="socialmedia" class = "ui padded center aligned segments">
           <div class = "ui segment">
-            <div class="ui centered card">
+            <div class="ui fluid centered card">
               <div class="left aligned content">
-                <div class="right floated meta">32min</div>
-                <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png"> username
-                <div class="ui inverted divider"></div>
-                <p>Lorem ipsum dolor omet.</p>
-              </div>
-              <div class="image">
-                <img class="logo" src="../images/placeholder.png">
-              </div>
-              <div class="left aligned content">
-                <span class="right floated">
-                  <i class="heart outline like icon"></i>3
-                </span>
-                <i class="comment outline icon"></i>15
-              </div>
-              <div class="extra content">
-                <div class="ui large transparent left floated icon input">
-                  <input type="text" placeholder="Add Comment...">
+                <div class="right floated meta">
+                  <% tweets.forEach(function(tweet){ %>
+                    <%= tweets.created_at%>
+                  <% }); %>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class = "ui segment">
-            <div class="ui centered card">
-              <div class="left aligned content">
-                <div class="right floated meta">32min</div>
-                <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png"> username
-                <div class="ui inverted divider"></div>
-                <p class>Lorem ipsum dolor omet.</p>
-              </div>
-              <div class="image">
-                <img class="logo" src="../images/placeholder.png">
-              </div>
-              <div class="left aligned content">
-                <span class="right floated">
-                  <i class="heart outline like icon"></i>3
-                </span>
-                <i class="comment outline icon"></i>15
-              </div>
-              <div class="extra content">
-                <div class="ui large transparent left floated icon input">
-                  <input type="text" placeholder="Add Comment...">
+                <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png">
+                <% tweets.forEach(function(tweet){ %>
+                  <%= tweets.user.screen_name %>
+                <% }); %>
+                <div class="ui inverted divider">
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class = "ui segment">
-            <div class="ui centered card">
-              <div class="left aligned content">
-                <div class="right floated meta">32min</div>
-                <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png"> username
-                <div class="ui inverted divider"></div>
-                <p class>Lorem ipsum dolor omet.</p>
-              </div>
-              <div class="image">
-                <img class="logo" src="../images/placeholder.png">
-              </div>
-              <div class="left aligned content">
-                <span class="right floated">
-                  <i class="heart outline like icon"></i>3
-                </span>
-                <i class="comment outline icon"></i>15
-              </div>
-              <div class="extra content">
-                <div class="ui large transparent left floated icon input">
-                  <input type="text" placeholder="Add Comment...">
-                </div>
+                <% tweets.forEach(function(tweet){ %>
+                  <%= tweets.text% >
+                <% }); %>
               </div>
             </div>
           </div>
