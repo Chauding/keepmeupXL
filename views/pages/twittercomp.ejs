@@ -4,17 +4,17 @@
               <div class="left aligned content">
                 <div class="right floated meta">
                   <% tweets.forEach(function(tweet){ %>
-                    <%= tweets.created_at%>
+                    <%= tweet.created_at %>
                   <% }); %>
                 </div>
                 <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png">
                 <% tweets.forEach(function(tweet){ %>
-                  <%= tweets.user.screen_name %>
+                  <%= tweet.user.screen_name %>
                 <% }); %>
                 <div class="ui inverted divider">
                 </div>
                 <% tweets.forEach(function(tweet){ %>
-                  <%= tweets.text% >
+                  <%= tweet.text %>
                 <% }); %>
               </div>
             </div>

@@ -6,10 +6,10 @@ var config = require ('../config.js');
 var T = new twit(config);
 var params = {
     q: '#rainbow',
-    count: 50
+    count: 3
 };
 router.get('/', function (req, res) {
-  res.render('pages/index');
+  res.render('pages/index',{tweets: tweets});
 });
 
 T.get('search/tweets', params, gotData);
@@ -18,9 +18,10 @@ function gotData(err, data, response) {
     tweets = data.statuses;
    for (var i = 0; i<tweets.length; i++){
      console.log('Tweet number : ' + i);
-     console.log('created at: ' + tweets[i].created_at);
-     console.log('created by @'+tweets[i].user.screen_name);
-     console.log(tweets[i].text);
+     console.log(tweets);
+     // console.log('created at: ' + tweets[i].created_at);
+     // console.log('created by @'+tweets[i].user.screen_name);
+     // console.log(tweets[i].text);
     }
 };
 

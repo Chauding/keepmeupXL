@@ -1,9 +1,6 @@
 <div id="content" class="ui grid">
 <div class="sixteen wide column">
   <div class="ui padded centered algined grid center-block">
-       <link rel="stylesheet" href="/dist/semantic.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-
     <div class="five wide center aligned column">
          <h3>INSTAGRAM</h3>
     </div>
@@ -13,17 +10,20 @@
     <div class="five wide center aligned column">
          <h3 style="font-weight: bold">REDDIT</h3>
     </div>
-
+  </div>
   <div class="ui padded centered algined grid center-block">
-    <div id = "socialmedia" class="five wide padded column" style="background-color: #ebebeb">
+    <div class="five wide center aligned column">
 
     </div>
-    <div class="five wide padded column" style="height:80vh !important;overflow:auto;background-color: #ebebeb;">
-        <!-- <%- include('pages/twittercomp.ejs', tweets: tweets)%> -->
+    <div class="five wide center aligned column">
+      <% tweets.forEach(function(tweet){ %>
+        <%- include ../pages/twittercomp.ejs%>
+      <% }); %>
     </div>
-    <div id = "socialmedia" class="five wide padded column" style="background-color: #ebebeb">
+    <div class="five wide center aligned column">
 
     </div>
+
   </div>
 </div>
 </div>
