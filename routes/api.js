@@ -13,7 +13,7 @@ var twitterAPI = new twit(config);
 router.post('/api', function (req, res) {
     var search = req.body;
     console.log(search);
-    twitterAPI.get('search/tweets', { q: search, count: 100}, function(err, data, response) {
+    twitterAPI.get('search/tweets', { q: search, count: 50}, function(err, data, response) {
       res.send(data);
     });
 });

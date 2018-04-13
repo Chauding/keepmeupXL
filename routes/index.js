@@ -10,9 +10,7 @@ var params = {
     count: 50
 };
 router.get('/', function (req, res) {
-  if(req.query.q == null  && req.query.q == ''){
-    params.q = req.query.q;
-  }
+  params.q = req.query.q;
   T.get('search/tweets', params, function(err, data, response) {
     tweets = data.statuses;
     res.render('pages/index',{tweets:tweets});
@@ -29,10 +27,3 @@ function ensureAuthenticated(req, res, next){
 	};
 };
 module.exports = router;
-// Pritning out the json output
-// for (var i = 0; i<tweets.length; i++){
-//   console.log('Tweet number : ' + i);
-//   console.log('created at: ' + tweets[i].created_at);
-//   console.log('created by @'+tweets[i].user.screen_name);
-//   console.log(tweets[i].text);
-//  }
