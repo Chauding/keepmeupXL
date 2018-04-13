@@ -4,14 +4,20 @@ var ejs = require('ejs');
 var twit = require('twit');
 var config = require ('../config.js');
 var T = new twit(config);
-
-var params = {
-    q: '#gaypride',
+var twitterParams = {
+    q: '#rainbow',
     count: 50
 };
 router.get('/', function (req, res) {
-  params.q = req.query.q;
-  T.get('search/tweets', params, function(err, data, response) {
+  if(req.query.q == null || req.query.q == ' '){
+    twitterParams.q =  '#rainbow';
+    console.log('params.q 1 '+ twitterParams.q);
+  }else if(twitterParams.q == '#rainbow') {
+    // params.q = req.query.q;
+    twitterParams.q =  '#poo';
+    console.log('params.q 2 '+ req.params);
+  }
+  T.get('search/tweets', twitterParams, function(err, data, response) {
     tweets = data.statuses;
     res.render('pages/index',{tweets:tweets});
   });

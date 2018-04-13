@@ -6,15 +6,20 @@ var twit = require('twit');
 var bodyParser = require( 'body-parser' )
 //This sets bodyParser to act as middleware and go over all requests sent to your server
 router.use( bodyParser.json() );
+router.use(express.urlencoded());
 var config = require ('../config.js');
 var twitterAPI = new twit(config);
 
 //get based on search term, count, location, etc
-router.post('/api', function (req, res) {
-    var search = req.body;
+router.post('/', function (req, res) {
+    var search = req.body.search;
+    console.log('search ****');
     console.log(search);
-    twitterAPI.get('search/tweets', { q: search, count: 50}, function(err, data, response) {
-      res.send(data);
+      console.log('search ****');
+    twitterAPI.get('search/tweets', { q: search, count: 2}, function(err, data, response) {
+      res.send(search);
+      var tweets = data.statuses;
+      console.log(tweets);
     });
 });
 

@@ -4,23 +4,23 @@ Index.load = function(){
       $('.ui.dropdown').dropdown();
       $(".header-search .prompt").keyup(function(event){
         if (event.keyCode === 13) {
-          // var requestData = {
-          //   search: $(".header-search .prompt").val()
-          // }
-          // $.ajax({
-          //        url: "http://localhost:8080/api",
-          //        method: "POST",
-          //        dataType:"json",
-          //        data: requestData,
-          //        success: function(results) {
-          //         $('.twitter-div').empty();
-          //
-          //       },
-          //       error: function(results) {
-          //         console.log('NO' + results);
-          //       },
-          // })
-          Index.newRender();
+          var requestData = {
+            search: $(".header-search .prompt").val()
+          }
+          $.ajax({
+                 url: "http://localhost:8080/",
+                 method: "POST",
+                 dataType:"json",
+                 data: requestData,
+                 success: function(results) {
+                  console.log(this.data);
+                  location.reload();
+                },
+                error: function(results) {
+                  console.log('NO' + results);
+                },
+          })
+          // Index.newRender();
         }
       });
 }
