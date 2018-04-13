@@ -1,12 +1,21 @@
 var Index = function() {};
 Index.load = function(){
-      // $('.ui.sidebar').sidebar('setting','closeable',false).sidebar('attach events', '#burger').sidebar('');
-      // $(".remove").off('click').on('click', function(){
-      //     $('.ui.sidebar') .sidebar('hide');
-      // });
       $('.ui.dropdown').dropdown();
-
-      // $(".header-search .prompt").on("click", function(){
-      //   alert("not implemented yet, sorry!");
-      // })
+      $(".header-search .prompt").keyup(function(event){
+        if (event.keyCode === 13) {
+          $.ajax({
+                 url: "http://localhost:8080/",
+                 method: "POST",
+                 dataType:"json",
+                 data: $(".header-search .prompt").val(),
+                 success: function(results) {
+                  console.log('Yay' + results);
+                  conole.log(this.data);
+                },
+                error: function(results) {
+                  console.log('NO' + results);
+                },
+          })
+        }
+      });
 }
