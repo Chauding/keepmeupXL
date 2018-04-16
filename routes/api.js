@@ -15,11 +15,10 @@ router.post('/', function (req, res) {
     var search = req.body.search;
     console.log('search ****');
     console.log(search);
-      console.log('search ****');
-    twitterAPI.get('search/tweets', { q: search, count: 2}, function(err, data, response) {
-      res.send(search);
+    twitterAPI.get('search/tweets', { q: search, count: 50}, function(err, data, response) {
       var tweets = data.statuses;
       console.log(tweets);
+      res.render('pages/twitterColumn',{tweets:tweets});
     });
 });
 

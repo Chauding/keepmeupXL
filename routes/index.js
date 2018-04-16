@@ -9,14 +9,14 @@ var twitterParams = {
     count: 50
 };
 router.get('/', function (req, res) {
-  if(req.query.q == null || req.query.q == ' '){
-    twitterParams.q =  '#rainbow';
-    console.log('params.q 1 '+ twitterParams.q);
-  }else if(twitterParams.q == '#rainbow') {
-    // params.q = req.query.q;
-    twitterParams.q =  '#poo';
-    console.log('params.q 2 '+ req.params);
-  }
+  // if(req.query.q == null || req.query.q == ' '){
+  //   twitterParams.q =  '#rainbow';
+  //   console.log('params.q 1 '+ twitterParams.q);
+  // }else if(twitterParams.q == '#rainbow') {
+  //   // params.q = req.query.q;
+  //   twitterParams.q =  '#poo';
+  //   console.log('params.q 2 '+ req.params);
+  // }
   T.get('search/tweets', twitterParams, function(err, data, response) {
     tweets = data.statuses;
     res.render('pages/index',{tweets:tweets});

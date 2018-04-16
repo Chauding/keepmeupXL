@@ -8,26 +8,29 @@ Index.load = function(){
             search: $(".header-search .prompt").val()
           }
           $.ajax({
-                 url: "http://localhost:8080/",
+                 url: "/",
                  method: "POST",
-                 dataType:"json",
                  data: requestData,
-                 success: function(results) {
-                  console.log(this.data);
-                  location.reload();
+                 success: function(response) {
+                   $('#twitterColumn').empty();
+                   $('#twitterColumn').html(response);
                 },
-                error: function(results) {
-                  console.log('NO' + results);
+                error: function(data) {
+                  console.log('NO');
                 },
           })
+          // calls the funciton below
           // Index.newRender();
         }
       });
 }
 Index.register = function (){
     $(".ui.search").addClass('lab-hidden');
+    $('.ui.dropdown').dropdown();
 }
 Index.newRender = function () {
+  // takes the value inside the serach bar
   var searchTerm = $(".header-search .prompt").val();
+  //puts the value above and sets it to be a variable in the url
    window.location.href = 'http://localhost:8080/?q=' + searchTerm;
 }
