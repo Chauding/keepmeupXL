@@ -14,7 +14,8 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/keepmeup', { useMongoClient: true });
 var db = mongoose.connection;
 var routes = require('./routes/index');
-var users = require = require('./routes/users');
+var users = require('./routes/users');
+var apiroutes = require('./routes/api');
 
 //Init keepmeup
 var app = express();
@@ -66,9 +67,10 @@ app.use(flash());
  });
 app.use('/',routes);
 app.use('/',users);
+app.use('/',apiroutes);
 
 //set port
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 8080));
 
 app.listen(app.get('port'), function(){
   console.log('Server started on port ' + app.get('port'));
