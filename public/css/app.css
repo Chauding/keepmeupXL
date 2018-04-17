@@ -49,3 +49,8 @@
     margin:auto;
     height: 100%;
 }
+
+#twitterColumn {
+    height: 85vh;
+    overflow-y: auto;
+}
