@@ -16,9 +16,11 @@
 
     </div>
     <div id="twitterColumn" class="five wide center aligned column">
-      <% tweets.forEach(function(tweet){ %>
-        <%- include ../pages/twittercomp %>
-      <% }); %>
+      <div class="iu segment">
+            <% tweets.forEach(function(tweet){ %>
+            <%- include ../pages/twittercomp %>
+          <% }); %>
+        </div>
     </div>
     <div class="five wide center aligned column">
 
