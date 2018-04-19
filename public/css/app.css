@@ -28,7 +28,7 @@
     background-color: #eb531c;
 }
 
-#privacy, #settings, #register, #login {
+#privacy, #settings {
     margin-top: 2.85em !important;
 }
 
@@ -50,6 +50,6 @@
 }
 
 #twitterColumn {
-    height: 85vh;
+    height: 80vh;
     overflow-y: auto;
 }
