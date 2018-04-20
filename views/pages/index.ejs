@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <!-- using head template -->
     <% include ../partials/head.ejs%>
   </head>
   <body>
+     <!-- using header template -->
     <% include ../partials/header.ejs%>
+      <!-- using dashboard template -->
     <% include ../pages/dashboard.ejs%>
+      <!-- using footer template -->
     <% include ../partials/footer.ejs%>
+      
+      <!-- this page is the one that loads first when website starts up -->
+    <script src="../js/index.js" onload="Index.load()"></script>
   </body>
 </html>

@@ -3,27 +3,33 @@ var router = express.Router();
 var ejs = require('ejs');
 var twit = require('twit');
 var config = require ('../config.js');
+var ig = require('instagram-node').instagram();
 var T = new twit(config);
-var params = {
+var twitterParams = {
     q: '#rainbow',
-    count: 3
+    count: 50
 };
 router.get('/', function (req, res) {
-  res.render('pages/index',{tweets: tweets});
+  // this was to get the search term from the url and set it to the q: val in Params
+  // but I took a different approach to demonstrate client and sever side skills
+  // if(req.query.q == null || req.query.q == ' '){
+  //   twitterParams.q =  '#rainbow';
+  //   console.log('params.q 1 '+ twitterParams.q);
+  // }else if(twitterParams.q == '#rainbow') {
+  //   // params.q = req.query.q;
+  //   twitterParams.q =  '#poo';
+  //   console.log('params.q 2 '+ req.params);
+  // }
+
+  T.get('search/tweets', twitterParams, function(err, data, response) {
+    ig.tag_search('query', function(err, result, remaining, limit) {
+      console.log("hello "+result);
+    });
+    tweets = data.statuses;
+    res.render('pages/index',{tweets:tweets});
+  });
 });
 
-T.get('search/tweets', params, gotData);
-
-function gotData(err, data, response) {
-    tweets = data.statuses;
-   for (var i = 0; i<tweets.length; i++){
-     console.log('Tweet number : ' + i);
-     console.log(tweets);
-     // console.log('created at: ' + tweets[i].created_at);
-     // console.log('created by @'+tweets[i].user.screen_name);
-     // console.log(tweets[i].text);
-    }
-};
 
 function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){

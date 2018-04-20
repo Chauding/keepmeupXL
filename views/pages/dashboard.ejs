@@ -8,20 +8,21 @@
          <h3>TWITTER</h3>
     </div>
     <div class="five wide center aligned column">
-         <h3 style="font-weight: bold">REDDIT</h3>
+         <h3>REDDIT</h3>
     </div>
   </div>
   <div class="ui padded centered algined grid center-block">
-    <div class="five wide center aligned column">
+    <div class="five wide center aligned column" id="ul">
 
     </div>
-    <div class="five wide center aligned column">
-      <% tweets.forEach(function(tweet){ %>
-        <%- include ../pages/twittercomp.ejs%>
-      <% }); %>
+    <div id="twitterColumn" class="five wide center aligned column">
+            <% tweets.forEach(function(tweet){ %>
+            <%- include ../pages/twittercomp %>
+          <% }); %>
     </div>
-    <div class="five wide center aligned column">
-
+    <div id="redditContainer" class="five wide center aligned column">
+      <div id="redditColumn" class = "ui padded center aligned segments">
+      </div>
     </div>
 
   </div>
