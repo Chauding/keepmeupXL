@@ -23,27 +23,33 @@
 .login-column{
   max-width: 450px;
 }
-#login{
-height: 100%;
-}
+
 #navBar{
     background-color: #eb531c;
 }
 
-#privacy {
+#privacy, #settings {
     margin-top: 2.85em !important;
 }
 
-#settings {
-    margin-top: 2.85em !important;
-}
-
-#register {
-    margin-top: 2.85em !important;
-}
 
 #socialmedia {
-    height:100%;
     overflow:auto;
     background-color: #ebebeb;
+}
+
+#register-text {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+#register, #login {
+    max-width: 450px !important;
+    margin:auto;
+    height: 100%;
+}
+
+#twitterColumn {
+    height: 80vh;
+    overflow-y: auto;
 }
