@@ -38,9 +38,24 @@
     height: 100%;
 }
 
+
 #socialmedia {
-    height:100%;
     overflow:auto;
     background-color: #ebebeb;
 }
 
+#register-text {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+#register, #login {
+    max-width: 450px !important;
+    margin:auto;
+    height: 100%;
+}
+
+#twitterColumn, #redditContainer{
+    height: 80vh;
+    overflow-y: auto;
+}

@@ -7,10 +7,21 @@
         </div>
         <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png">
           <%= tweet.user.screen_name %>
-        <div class="ui inverted divider">
-        </div>
+        <div class="ui inverted divider"></div>
           <%= tweet.text %>
       </div>
     </div>
+  </div>
+</div>
+<div class="ui fluid centered card">
+  <div class="left aligned content">
+    <div class="right floated meta">
+        <%= tweet.created_at %>
+    </div>
+    <img class="ui avatar image" src="../images/keepmeup-logo-no-text.png">
+      <%= tweet.user.screen_name %>
+    <div class="ui inverted divider">
+    </div>
+      <%= tweet.text %>
   </div>
 </div>
