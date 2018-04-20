@@ -49,7 +49,7 @@
     height: 100%;
 }
 
-#twitterColumn {
+#twitterColumn, #redditContainer{
     height: 80vh;
     overflow-y: auto;
 }

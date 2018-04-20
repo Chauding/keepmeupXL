@@ -12,21 +12,17 @@
     </div>
   </div>
   <div class="ui padded centered algined grid center-block">
-    <div class="five wide center aligned column">
-      <li>
-        <ul id="ul">
-        </ul>
-      </li>
+    <div class="five wide center aligned column" id="ul">
+
     </div>
     <div id="twitterColumn" class="five wide center aligned column">
-      <div class="iu segment">
             <% tweets.forEach(function(tweet){ %>
             <%- include ../pages/twittercomp %>
           <% }); %>
-        </div>
     </div>
-    <div class="five wide center aligned column">
-
+    <div id="redditContainer" class="five wide center aligned column">
+      <div id="redditColumn" class = "ui padded center aligned segments">
+      </div>
     </div>
 
   </div>

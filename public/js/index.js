@@ -59,25 +59,29 @@ Index.newRender = function () {
    window.location.href = 'http://localhost:8080/?q=' + searchTerm;
 }
 Index.getResults =  function (requestData) {
+  // empties the container to reload new data
+  $('#redditColumn').empty();
   var url = "http://www.reddit.com/search.json?q="+ requestData;
-  console.log(url);
   $.getJSON(url, function foo(data) {
         //for every entry in the data array, not you must look at the raw json from the api you are using.
         //Every json stream is different with different elements.
         $.each(
             //get the first 10 children (ie first ten posts)
-            data.data.children.slice(0, 10),
+            data.data.children.slice(0, 50),
             function (i, post) {
+              // too see what data is coming down
+              // console.log(post.data);
                 //create a new article for every item
                 //for every item get the parts we want and append it to the new article
-                var item = $(document.createElement('article'))
-                    .append( '<h2>' + post.data.title + '</h2>')
-                    .append( '<a href="' + post.data.permalink +'">post.data.permalink</a>')
-                    .append( '<a href="' + post.data.url +'">LINK URL</a>')
-                    .append( '<p><span class="up"> UPs:' + post.data.ups + '</span><span class="down">  DOWNs:' + post.data.downs +'</span></p>');
-
-                $(item).addClass('item');//add the item class so the css picks it up
-                $('#content').append(item);//append the item to the main content
+                var item = $(document.createElement('div'))
+                .append('<div class="ui fluid centered card"><div class="left aligned content"><div class="right floated meta">'
+                +post.data.subreddit_name_prefixed + '</div><img class="ui avatar image" src="../images/keepmeup-logo-no-text.png"> '+
+                post.data.author  +'<div class="ui inverted divider"></div>'
+                + post.data.title + '</div><p><span class="up"> <i class="red arrow up icon"></i>' +
+                post.data.ups + '</span><span class="down"> <i class="blue arrow down icon"></i>' +
+                post.data.downs +'</span></p>');
+                $(item).addClass('item ui segment');//add the item class so the css picks it up
+                $('#redditColumn').append(item);//append the item to the main content
 
             }
         )
