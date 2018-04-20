@@ -21,6 +21,30 @@ Index.load = function(){
           })
           // calls the funciton below
           // Index.newRender();
+          // instargram not really working
+          var token = '12930071.4771b68.7c3097a46b484a63aaf31632aca9cb65',
+          client_id = '4771b68ebdf449589e2ea82b6b398d33',
+          redirect_uri ='https://elfsight.com/service/generate-instagram-access-token/',
+          hashtag='wordcamprussia2015', // hashtag without # symbol
+          num_photos = 4;
+          $.ajax({
+            // url: 'https://api.instagram.com/v1/tags/'+ hashtag +'/media/recent?access_token='+token+'&scope=public_content',
+          	// url: 'https://api.instagram.com/v1/tags/' + hashtag + '/media/recent',
+            url: 'https://api.instagram.com/oauth/authorize/?client_id=' + client_id + '&redirect_uri=' + redirect_uri + '&response_type=code',
+          	dataType: 'jsonp',
+          	type: 'GET',
+          	data: {access_token: token, count: num_photos},
+          	success: function(data){
+          		console.log(data);
+          		for(x in data.data){
+          			$('#ul').append('<li><img src="'+data.data[x].images.standard_resolution.url+'"></li>');
+          		}
+          	},
+          	error: function(data){
+          		console.log(data);
+          	}
+          });
+          Index.getResults(requestData.search);
         }
       });
 }
@@ -33,4 +57,29 @@ Index.newRender = function () {
   var searchTerm = $(".header-search .prompt").val();
   //puts the value above and sets it to be a variable in the url
    window.location.href = 'http://localhost:8080/?q=' + searchTerm;
+}
+Index.getResults =  function (requestData) {
+  var url = "http://www.reddit.com/search.json?q="+ requestData;
+  console.log(url);
+  $.getJSON(url, function foo(data) {
+        //for every entry in the data array, not you must look at the raw json from the api you are using.
+        //Every json stream is different with different elements.
+        $.each(
+            //get the first 10 children (ie first ten posts)
+            data.data.children.slice(0, 10),
+            function (i, post) {
+                //create a new article for every item
+                //for every item get the parts we want and append it to the new article
+                var item = $(document.createElement('article'))
+                    .append( '<h2>' + post.data.title + '</h2>')
+                    .append( '<a href="' + post.data.permalink +'">post.data.permalink</a>')
+                    .append( '<a href="' + post.data.url +'">LINK URL</a>')
+                    .append( '<p><span class="up"> UPs:' + post.data.ups + '</span><span class="down">  DOWNs:' + post.data.downs +'</span></p>');
+
+                $(item).addClass('item');//add the item class so the css picks it up
+                $('#content').append(item);//append the item to the main content
+
+            }
+        )
+    });
 }

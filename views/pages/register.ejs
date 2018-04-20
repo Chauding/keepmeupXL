@@ -8,6 +8,9 @@
           <form class="ui form" action="/register" method="post">
               <!-- Put form in here e.g.  -->
               <div class="field">
+                  <% if(errors){errors.forEach(function(error){%>
+                    <div class="alert alert-danger ui error message"><%= error.msg %></div>
+                    <% })} %>
                  <label>Name</label>
                  <input type="text" name="name" placeholder="Name">
                </div>
@@ -40,4 +43,3 @@
     <script src="/js/index.js" type="text/javascript" onload="Index.load()"></script>
   </body>
 </html>
-
