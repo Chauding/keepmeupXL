@@ -1,3 +1,7 @@
+body {
+    background-color: #ebebeb;
+}
+
 #content{
   height: 100vh;
   padding: 5em 1em 1em 1em;
@@ -41,6 +45,7 @@
 #register-text {
     font-size: 18px;
     font-weight: lighter;
+    color: #252525; 
 }
 
 #register, #login {
@@ -49,7 +54,24 @@
     height: 100%;
 }
 
-#twitterColumn, #redditContainer{
+#twitterColumn, #redditContainer, #instaColumn{
     height: 80vh;
     overflow-y: auto;
+    padding-right: 2em; 
+    padding-left: 2em;
+}
+
+#instaIcon {
+    margin-top:30vh;
+}
+
+
+.centered-heading {
+    text-align: center;
+    
+}
+
+.extra-padding {
+    padding: 1em 3em;
+    
 }

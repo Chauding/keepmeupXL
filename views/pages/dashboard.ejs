@@ -12,8 +12,15 @@
     </div>
   </div>
   <div class="ui padded centered algined grid center-block">
-    <div class="five wide center aligned column" id="ul">
-
+    
+      <div class="five wide center aligned column">
+        <div class="ui middle aligned center aligned grid">
+            <div id="instaColumn" class="middle aligned center aligned column">
+                <i id="instaIcon" class="huge wrench icon"></i>
+                <h1>We're terribly sorry!</h1>
+                <p class="register-text">Due to technical difficulties with the Instagram authentication, we're unable to retrive data. Thank you for your understanding.</p>
+            </div>
+        </div>
     </div>
     <div id="twitterColumn" class="five wide center aligned column">
             <% tweets.forEach(function(tweet){ %>
@@ -21,8 +28,11 @@
           <% }); %>
     </div>
     <div id="redditContainer" class="five wide center aligned column">
-      <div id="redditColumn" class = "ui padded center aligned segments">
-      </div>
+      <div id="redditColumn" class = "ui padded center aligned column">
+            <i id="instaIcon" class="huge search icon"></i>
+                <h1>Search!</h1>
+                <p class="register-text">To active our Reddit feed, please, use our searchbar to retrive desired data.</p>  
+        </div>
     </div>
 
   </div>
