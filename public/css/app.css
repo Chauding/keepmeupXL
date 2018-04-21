@@ -1,5 +1,6 @@
 body {
     background-color: #ebebeb;
+    font-family: Poppins, sans-serif;
 }
 
 #content{
@@ -57,8 +58,8 @@ body {
 #twitterColumn, #redditContainer, #instaColumn{
     height: 80vh;
     overflow-y: auto;
-    padding-right: 2em; 
-    padding-left: 2em;
+    padding-right: 1em; 
+    padding-left: 1em;
 }
 
 #instaIcon {
