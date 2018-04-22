@@ -2,7 +2,7 @@ var Index = function() {};
 Index.load = function(){
     $('#instaColumn').hide().delay( 10000 ).transition('scale');
     $('#redditContainer').hide().delay( 10000 ).transition('scale');
-    
+
     $(".ui.search").removeClass('lab-hidden');
       $('.ui.dropdown').dropdown();
       $(".header-search .prompt").keyup(function(event){
@@ -22,7 +22,7 @@ Index.load = function(){
                   console.log('NO');
                 },
           })
-          
+
           // calls the funciton below
           // Index.newRender();
           // instargram not really working
@@ -80,20 +80,18 @@ Index.getResults =  function (requestData) {
                 var item = $(document.createElement('div'))
                 .append('<div class="ui fluid centered card"><div class="left aligned content"><div class="right floated meta">' +
                 post.data.subreddit_name_prefixed + '</div><img class="ui avatar image" src="../images/rprofile3.png">' +
-                post.data.author  +'<div class="ui inverted divider"></div>' + 
+                post.data.author  +'<div class="ui inverted divider"></div>' +
                 post.data.title + '</div> <div class="ui inverted divider"></div> <p><span class="up"> <i class="grey arrow up icon"></i>' +
-                post.data.ups + '</span><span class="down"> <i class="grey arrow down icon"></i>' 
-//                 +
-//                 post.data.downs 
-                +'</span></p>');
+                post.data.ups + '</span><span class="down"> <i class="grey arrow down icon"></i>'+
+                post.data.downs+'</span></p>');
                 $(item).addClass('item ui segment');//add the item class so the css picks it up
                 $('#redditColumn').append(item);//append the item to the main content
 
             }
         )
       $('#redditContainer').transition('pulse');
-      $('#twitterColumn').transition('pulse');  
-      
+      $('#twitterColumn').transition('pulse');
+
     });
-    
+
 }
