@@ -25,6 +25,11 @@ body {
 #dashboard{
   background-color: grey;
 }
+.greyBG{
+  background-color: #ebebeb !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 .login-column{
   max-width: 450px;
 }
@@ -36,7 +41,9 @@ body {
 #privacy, #settings {
     margin-top: 2.85em !important;
 }
-
+.center-text{
+  text-align: center !important;
+}
 
 #socialmedia {
     overflow:auto;
@@ -46,7 +53,7 @@ body {
 #register-text {
     font-size: 18px;
     font-weight: lighter;
-    color: #252525; 
+    color: #252525;
 }
 
 #register, #login {
@@ -58,7 +65,7 @@ body {
 #twitterColumn, #redditContainer, #instaColumn{
     height: 80vh;
     overflow-y: auto;
-    padding-right: 1em; 
+    padding-right: 1em;
     padding-left: 1em;
 }
 
@@ -69,10 +76,10 @@ body {
 
 .centered-heading {
     text-align: center;
-    
+
 }
 
 .extra-padding {
     padding: 1em 3em;
-    
+
 }

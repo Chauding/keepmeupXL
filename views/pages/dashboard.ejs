@@ -1,9 +1,8 @@
 <!--This is our dashboard page where people can search for things from instagram, reddit and twitter
 containing a certain word or phrase-->
-
-<div id="content" class="ui grid">
+<div id="content" class="ui padded grid">
 <div class="sixteen wide column">
-  <div class="ui padded centered algined grid center-block">
+  <div class="ui padded centered algined grid center-block computer only">
     <div class="five wide center aligned column">
        <i class="ui grey-text big instagram icon"></i>
     </div>
@@ -14,34 +13,78 @@ containing a certain word or phrase-->
          <i class="ui grey-text big reddit alien icon"></i>
     </div>
   </div>
-  <div class="ui padded centered algined grid center-block">
-    
-      <div id="insta" class="five wide center aligned column">
-        <div class="ui middle aligned center aligned grid">
+  <div class="ui padded centered algined grid center-block mobile only tablet only">
+    <div class="ui text menu">
+        <div class="ui padded grid" style="width: 100%">
+          <div class="five wide center aligned column" style="margin-left:2em;">
+            <div class="center-block active item" data-tab="instagram">
+              <i class="ui grey-text big instagram icon"></i>
+            </div>
+          </div>
+          <div class="five wide center aligned column">
+            <div class="center-block item" data-tab="twitter">
+              <i class="ui grey-text big twitter icon"></i>
+            </div>
+          </div>
+          <div class="five wide center aligned column">
+            <div class="center-block item" data-tab="reddit">
+              <i class="ui grey-text big reddit alien icon "></i>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="ui padded centered algined grid center-block computer only">
+    <div id="insta" class="five wide computer center aligned sixteen wide mobile column">
+      <div class="ui segment greyBG">
         <div id="instaColumn" class="middle aligned center aligned column">
-         <i id="instaIcon" class="huge wrench icon"></i>
+          <i id="instaIcon" class="huge wrench icon"></i>
           <h1>We're terribly sorry!</h1>
           <p class="register-text">Due to technical difficulties with the Instagram authentication, we're unable to retrive data. Thank you for your understanding.</p>
-            </div>
         </div>
+      </div>
     </div>
-    <div id="twitterColumn" class="five wide center aligned column">
-            <% tweets.forEach(function(tweet){ %>
+    <div id="twitterColumn" class="five wide computer center aligned sixteen wide mobile column">
+      <div class="ui segment greyBG">
+        <!-- the for loop for looping throiught he tweets data -->
+          <% tweets.forEach(function(tweet){ %>
+            <!--  Calls the twittercomp component from pages, this is the repoeat component-->
             <%- include ../pages/twittercomp %>
           <% }); %>
+      </div>
     </div>
-    <div id="redditContainer" class="five wide center aligned column">
-      <div id="redditColumn" class = "ui padded center aligned column">
-            <i id="instaIcon" class="huge search icon"></i>
-                <h1>Search!</h1>
-                <p class="register-text">To active our Reddit feed, please, use our searchbar to retrive desired data.</p>  
-        </div>
+    <div id="redditContainer" class="five wide computer center aligned sixteen wide mobile column">
+      <!-- this is the collumn where the html will be appended to  -->
+      <div id="redditColumn" class ="ui segmet greyBG redditColumn">
+        <i id="instaIcon" class="huge search icon"></i>
+        <h1>Search!</h1>
+        <p class="register-text">To active our Reddit feed, please, use our searchbar to retrive desired data.</p>
+      </div>
     </div>
-
   </div>
-    
+
+  <div class="ui padded centered algined grid mobile only tablet only">
+      <div id="insta" class="ui tab attached segment greyBG active" data-tab="instagram">
+        <div id="instaColumn" class="middle aligned center aligned column">
+          <i id="instaIcon" class="huge wrench icon"></i>
+          <h1>We're terribly sorry!</h1>
+          <p class="register-text">Due to technical difficulties with the Instagram authentication, we're unable to retrive data. Thank you for your understanding.</p>
+        </div>
+      </div>
+      <div id="twitterColumn" class="ui tab attached segment greyBG" data-tab="twitter">
+        <!-- the for loop for looping throiught he tweets data -->
+          <% tweets.forEach(function(tweet){ %>
+            <!--  Calls the twittercomp component from pages, this is the repoeat component-->
+            <%- include ../pages/twittercomp %>
+          <% }); %>
+      </div>
+      <!-- this is the collumn where the html will be appended to  -->
+      <div id="redditColumn" class ="ui tab attached segmet greyBG redditColumn" data-tab="reddit">
+        <i id="instaIcon" class="huge search icon"></i>
+        <h1>Search!</h1>
+        <p class="register-text">To active our Reddit feed, please, use our searchbar to retrive desired data.</p>
+      </div>
+  </div>
+
 </div>
-    <div class="sixteen wide column">
-      <h4 class="ui header" data-inverted="" data-tooltip="If you would like to see something else or have any suggestions to improve the website, please do not hesitate to contact us" data-position="top left">Any suggestions?</h4>   
-    </div>
 </div>

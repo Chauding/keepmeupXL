@@ -6,7 +6,7 @@ var config = require ('../config.js');
 var ig = require('instagram-node').instagram();
 var T = new twit(config);
 var twitterParams = {
-    q: '#rainbow',
+    q: 'RGU',
     count: 50
 };
 router.get('/', function (req, res) {
