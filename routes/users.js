@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var axios = require('axios');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
@@ -41,12 +40,12 @@ router.post('/register', function(req, res){
 	req.checkBody('password', 'Password is required').notEmpty();
 	req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
-	var errors = req.getValidationResult();
+	var errors = req.validationErrors();
 
 	if(errors){
-		console.log("errors: " + errors);
-		// res.render('pages/register',{ errors:errors});
-		res.render('pages/register',{errors:errors});
+		res.render('register',{
+			errors:errors
+		});
 	} else {
 		var newUser = new User({
 			name: name,
@@ -94,7 +93,8 @@ passport.use(new LocalStrategy(
 	  });
 	});
 
-router.post('/login', passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login',failureFlash:true}),
+router.post('/login',
+  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login',failureFlash:true}),
   function(req, res) {
     res.redirect('/');
   });

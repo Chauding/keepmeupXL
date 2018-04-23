@@ -46,14 +46,14 @@ Index.getRedditResults =  function (requestData) {
   $('.redditColumn').empty();
   $('.redditColumn').append('<div class="ui active inverted dimmer" style="background-color:#ebebeb"> <div class="ui text loader">Loading</div></div>');
   console.log(requestData);
-  var url = "http://www.reddit.com/search.json?q="+ requestData;
+  var url = "https://www.reddit.com/search.json?q="+ requestData;
   $.getJSON(url, function foo(data) {
         //for every entry in the data array, not you must look at the raw json from the api you are using.
         //Every json stream is different with different elements.
         $('.redditColumn').empty();
         $.each(
             //get the first 10 children (ie first ten posts)
-            data.data.children.slice(0, 50),
+            data.data.children.slice(0, 20),
             function (i, post) {
               // too see what data is coming down
               console.log(post.data);
