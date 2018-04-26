@@ -1,3 +1,8 @@
+body {
+    background-color: #ebebeb;
+    font-family: Poppins, sans-serif;
+}
+
 #content{
   height: 100vh;
   padding: 5em 1em 1em 1em;
@@ -15,10 +20,15 @@
   margin-right: auto !important;
 }
 .white-text{
-  color: white;
+  color: white !important;
 }
 #dashboard{
   background-color: grey;
+}
+.greyBG{
+  background-color: #ebebeb !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 .login-column{
   max-width: 450px;
@@ -31,13 +41,9 @@
 #privacy, #settings, #register{
     margin-top: 2.85em !important;
 }
-
-#register, #login {
-    max-width: 450px !important;
-    margin: auto;
-    height: 100%;
+.center-text{
+  text-align: center !important;
 }
-
 
 #socialmedia {
     overflow:auto;
@@ -47,6 +53,7 @@
 #register-text {
     font-size: 18px;
     font-weight: lighter;
+    color: #252525;
 }
 
 #register, #login {
@@ -55,7 +62,21 @@
     height: 100%;
 }
 
-#twitterColumn, #redditContainer{
-    height: 80vh;
+#twitterColumn, #redditContainer, #instaColumn{
+    height: 70vh;
     overflow-y: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+#insta, #twitterColumn, #redditContainer{
+  padding: 0px !important;
+}
+#instaIcon {
+    margin-top:30vh;
+}
+.centered-heading {
+    text-align: center;
+}
+.extra-padding {
+    padding: 1em 3em;
 }

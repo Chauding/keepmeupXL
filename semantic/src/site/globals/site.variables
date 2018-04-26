@@ -1,3 +1,17 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@fontName          : 'Poppins';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, 'Poppins', sans-serif;
+@pageFont          : @fontName, 'Poppins', sans-serif;
+
+@googleFontName    : @fontName;
+@importGoogleFonts : true;
+@googleFontSizes   : '300,400,700,400italic,700italic';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
