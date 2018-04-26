@@ -29,11 +29,12 @@ module.exports.createUser = function(newUser, callback){
 	    bcrypt.hash(newUser.password, salt, function(err, hash) {
 	        newUser.password = hash;
 	        newUser.save(callback);
-	    });
+	    });3
 	});
 }
-module.exports.updateUser = function(curentUser, callback){
-	curentUser.save(callback);
+module.exports.updateUser = function(currentUser,name, callback){
+  console.log('name module export: '+ name);
+	User.update(currentUser, name, callback);
 }
 
 module.exports.getUserByUsername = function(username, callback){

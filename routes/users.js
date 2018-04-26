@@ -34,21 +34,23 @@ router.get('/login', function(req, res){
 	res.render('pages/login');
 });
 
-router.post('/settings', function (req, res) {
-	var	currentUser = req.user
-	var name = req.body.name;
-	var email = req.body.email;
-	var username = req.body.username;
-	var password = req.body.password;
-	var password2 = req.body.password2;
-	var dob = req.body.dob;
-	console.log(JSON.stringify(req.body));
-	User.updateUser(currentUser, function (err, user) {
-	  if(name){ user.name = name;}
-		user.save(function(err){
-			if(err){ res.send(err)}
-			res.render('pages/settings',{user:user})
-		})
+router.post('/settings', function (req, res){
+	var query = {
+		username: req.user.username
+	}
+	var update = {
+		name: req.body.name,
+			email : req.body.email,
+			username : req.body.username,
+			dob : req.body.dob,
+	}
+	User.updateUser(query,update, function (err, user) {
+		// User.update(currentUser, name, function(err){
+			if(err) throw err;
+			console.log(err);
+			console.log(user);
+			var currentUser = req.user;
+			res.render('pages/settings',{currentUser: currentUser})
 	});
 });
 
