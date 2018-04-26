@@ -20,7 +20,7 @@ body {
   margin-right: auto !important;
 }
 .white-text{
-  color: white;
+  color: white !important;
 }
 #dashboard{
   background-color: grey;
@@ -63,23 +63,20 @@ body {
 }
 
 #twitterColumn, #redditContainer, #instaColumn{
-    height: 80vh;
+    height: 70vh;
     overflow-y: auto;
     padding-right: 1em;
     padding-left: 1em;
 }
-
+#insta, #twitterColumn, #redditContainer{
+  padding: 0px !important;
+}
 #instaIcon {
     margin-top:30vh;
 }
-
-
 .centered-heading {
     text-align: center;
-
 }
-
 .extra-padding {
     padding: 1em 3em;
-
 }

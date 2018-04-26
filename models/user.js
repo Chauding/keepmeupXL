@@ -17,7 +17,10 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
-}
+  },
+  dob: {
+    type: Date
+  }
 });
 var User = module.exports = mongoose.model('User', UserSchema);
 
