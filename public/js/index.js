@@ -16,7 +16,9 @@ Index.load = function(){
              data: requestData,
              success: function(response) {
                $('#twitterColumn').empty();
+                $('.twitterColumn').transition('pulse');
                $('#twitterColumn').html(response);
+
             },
             error: function(data) {
               console.log('NO');
@@ -72,8 +74,6 @@ Index.getRedditResults =  function (requestData) {
             }
         )
       $('#redditContainer').transition('pulse');
-      $('.twitterColumn').transition('pulse');
-
     });
 }
 Index.getInstagramResults = function () {
@@ -113,10 +113,5 @@ Index.settings = function (){
     $('.CancelButton').addClass('lab-hidden');
     $('.saveButton').addClass('lab-hidden');
     $('.editButton').removeClass('lab-hidden');
-     
   })
-    $('.saveButton').on('click', function(){
-        
-    }
-    
 }

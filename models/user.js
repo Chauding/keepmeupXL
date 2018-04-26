@@ -32,9 +32,8 @@ module.exports.createUser = function(newUser, callback){
 	    });3
 	});
 }
-module.exports.updateUser = function(currentUser,name, callback){
-  console.log('name module export: '+ name);
-	User.update(currentUser, name, callback);
+module.exports.updateUser = function(query,update, callback){
+	User.update(query, update, callback);
 }
 
 module.exports.getUserByUsername = function(username, callback){

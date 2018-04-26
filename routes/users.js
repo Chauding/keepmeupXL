@@ -47,10 +47,9 @@ router.post('/settings', function (req, res){
 	User.updateUser(query,update, function (err, user) {
 		// User.update(currentUser, name, function(err){
 			if(err) throw err;
-			console.log(err);
+			console.log(update);
 			console.log(user);
-			var currentUser = req.user;
-			res.render('pages/settings',{currentUser: currentUser})
+			res.render('pages/settings',{user: update})
 	});
 });
 
