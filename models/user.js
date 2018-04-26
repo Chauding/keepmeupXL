@@ -32,6 +32,9 @@ module.exports.createUser = function(newUser, callback){
 	    });
 	});
 }
+module.exports.updateUser = function(curentUser, callback){
+	curentUser.save(callback);
+}
 
 module.exports.getUserByUsername = function(username, callback){
 	var query = {username: username};

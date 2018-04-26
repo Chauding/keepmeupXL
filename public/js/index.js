@@ -101,3 +101,16 @@ Index.getInstagramResults = function () {
     }
   });
 }
+Index.settings = function (){
+  $('.editButton').on('click', function(){
+    $('.ui.form .field').removeClass('disabled');
+    $('.editButton').addClass('lab-hidden');
+    $('.saveButton').removeClass('lab-hidden');
+    $('.CancelButton').removeClass('lab-hidden');
+  })
+  $('.CancelButton').on('click', function(){
+    $('.CancelButton').addClass('lab-hidden');
+    $('.saveButton').addClass('lab-hidden');
+    $('.editButton').removeClass('lab-hidden');
+  })
+}

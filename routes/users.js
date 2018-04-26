@@ -7,7 +7,7 @@ var User = require('../models/user');
 
 // route to create/ render register page ejs
 router.get('/register', function(req, res){
-	res.render('pages/register');
+	res.render('pages/register', {errors: false});
 });
 //was the previous route creation for setting
 // router.get('/settings', function(req, res){
@@ -18,12 +18,11 @@ router.get('/settings', function(req, res) {
     // mongoose operations are asynchronous, so the find will take a little time
 		//this isn't really needed but it was to just get the data from the database
     User.find({}, function(err, data) {
-			console.log(data);
+			// console.log(data);
         // All the data is in an array of objects, not a single object
 				user = req.user;
         res.render('pages/settings', {user : user});
     });
-
 });
 //Privacy
 router.get('/privacy', function(req, res){
@@ -33,6 +32,24 @@ router.get('/privacy', function(req, res){
 // Login
 router.get('/login', function(req, res){
 	res.render('pages/login');
+});
+
+router.post('/settings', function (req, res) {
+	var	currentUser = req.user
+	var name = req.body.name;
+	var email = req.body.email;
+	var username = req.body.username;
+	var password = req.body.password;
+	var password2 = req.body.password2;
+	var dob = req.body.dob;
+	console.log(JSON.stringify(req.body));
+	User.updateUser(currentUser, function (err, user) {
+	  if(name){ user.name = name;}
+		user.save(function(err){
+			if(err){ res.send(err)}
+			res.render('pages/settings',{user:user})
+		})
+	});
 });
 
 // Post method to send the data from the form to screen
@@ -57,10 +74,9 @@ router.post('/register', function(req, res){
 
 	if(errors){
 		console.log(errors)
-		res.render('register',{
-			errors:errors
-		});
+		res.render('pages/register',{errors:errors});
 	} else {
+		console.log('user made!')
 		var newUser = new User({
 			name: name,
 			email:email,
