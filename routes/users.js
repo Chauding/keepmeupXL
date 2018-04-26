@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var moment = require('moment');
 var User = require('../models/user');
 
 // route to create/ render register page ejs
@@ -60,7 +60,9 @@ router.post('/register', function(req, res){
 	var username = req.body.username;
 	var password = req.body.password;
 	var password2 = req.body.password2;
-	var dob = req.body.dob;
+	// using momentjs to format the data correctly
+	var dob = moment(req.body.dob).format('DD/MM/YYYY');
+
 	console.log(JSON.stringify(req.body));
 	// request fundtions for vaildation
 	req.checkBody('name', 'Name is required').notEmpty();

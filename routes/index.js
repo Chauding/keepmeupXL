@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ejs = require('ejs');
 var twit = require('twit');
+var moment = require('moment');
 var config = require ('../config.js');
 var ig = require('instagram-node').instagram();
 var User = require('../models/user');

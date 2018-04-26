@@ -102,6 +102,7 @@ Index.getInstagramResults = function () {
   });
 }
 Index.settings = function (){
+  $('.ui.dropdown').dropdown();
   $('.editButton').on('click', function(){
     $('.ui.form .field').removeClass('disabled');
     $('.editButton').addClass('lab-hidden');

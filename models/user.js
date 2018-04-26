@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var moment = require('moment');
 
 mongoose.connect('mongodb://localhost:27017/keepmeup', { useMongoClient: true });
 var db = mongoose.connection;
@@ -19,7 +20,7 @@ var UserSchema = mongoose.Schema({
 		type: String
   },
   dob: {
-    type: Date
+    type: String
   }
 });
 var User = module.exports = mongoose.model('User', UserSchema);
