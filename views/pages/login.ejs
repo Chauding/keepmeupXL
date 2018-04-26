@@ -1,37 +1,41 @@
+<!-- Login page for user -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <% include ../partials/head.ejs%>
   </head>
   <body>
-      <div id="login" class="ui middle aligned center aligned grid container">
-          <div class="column">
-              <img src="images/keepmeup-logo-no-text.png" class="ui centered small image">
-                <h2 class="ui orange header">Login</h2>
-            <form class="ui large form" method="post" action="/login">
-              <div class="ui stacked segment ">
-                <div class="field">
-                  <div class="ui left icon input">
-                    <i class="user icon"></i>
-                    <input type="text" name="username" placeholder="Username">
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="ui left icon input">
-                    <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Password">
-                  </div>
-                </div>
-                <button class="ui fluid large orange submit button" type="submit" name="button">Login</button>
-              </div>
-              <div class="ui error message"></div>
-            </form>
-          <div class="ui message">
-              New to us? <a href="/register">Sign Up</a>
+      <div id="login" class="ui middle aligned center aligned grid">
+      <div class="column">
+      <img src="images/keepmeup-logo-no-text.png" class="ui centered small image">
+       <h2 class="ui orange header">Login</h2>
+       <form class="ui form" method="post" action="/login">
+        <div class="ui segment ">
+         <div class="field">
+         <div class="ui left icon input">
+          <i class="user icon"></i>
+          <input type="text" name="username" placeholder="Username">
           </div>
-       </div>
+          </div>
+          <div class="field">
+           <div class="ui left icon input">
+           <i class="lock icon"></i>
+          <input type="password" name="password" placeholder="Password">
+           </div>
+            </div>
+            <button class="ui fluid large orange submit button" type="submit" name="button">Login</button>
+          </div>
+          <div class="ui error message"></div>
+        </form>
+
+       <div class="ui message">
+        <!--Link to register page so user can sign up if they do not have an account -->
+        New to us? <a href="/register">Sign Up</a>
+        </div>
       </div>
     <footer>
+     <!--using footer template-->
      <% include ../partials/footer %>
     </footer>
     <script src="/js/index.js" type="text/javascript" onload="Index.load()"></script>

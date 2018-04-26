@@ -10,6 +10,8 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var moment = require('moment');
+mongoose.Promise = global.Promise;
 var ig = require('instagram-node').instagram();
 
 mongoose.connect('mongodb://localhost:27017/keepmeup', { useMongoClient: true });
