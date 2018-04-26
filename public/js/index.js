@@ -109,8 +109,14 @@ Index.settings = function (){
     $('.CancelButton').removeClass('lab-hidden');
   })
   $('.CancelButton').on('click', function(){
+    $('.ui.form .field').addClass('disabled');
     $('.CancelButton').addClass('lab-hidden');
     $('.saveButton').addClass('lab-hidden');
     $('.editButton').removeClass('lab-hidden');
+     
   })
+    $('.saveButton').on('click', function(){
+        
+    }
+    
 }
