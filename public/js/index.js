@@ -15,8 +15,8 @@ Index.load = function(){
              method: "POST",
              data: requestData,
              success: function(response) {
-               $('#twitterColumn').empty();
-               $('#twitterColumn').html(response);
+               $('.twitterColumn').empty();
+               $('.twitterColumn').html(response);
                $('#twitterColumn').transition('pulse');
 
             },
