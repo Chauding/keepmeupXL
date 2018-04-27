@@ -45,7 +45,7 @@ containing a certain word or phrase-->
       </div>
     </div>
     <div id="twitterColumn" class="five wide computer center aligned sixteen wide mobile column">
-      <div class="ui segment greyBG twitterColumn">
+      <div class="greyBG twitterColumn">
         <!-- the for loop for looping throiught he tweets data -->
           <% tweets.forEach(function(tweet){ %>
             <!--  Calls the twittercomp component from pages, this is the repoeat component-->
@@ -55,8 +55,8 @@ containing a certain word or phrase-->
     </div>
     <div id="redditContainer" class="five wide computer center aligned sixteen wide mobile column">
       <!-- this is the collumn where the html will be appended to  -->
-      <div id="redditColumn" class ="ui segmet greyBG redditColumn">
-        <i id="instaIcon" class="huge search icon"></i>
+      <div class ="greyBG redditColumn">
+        <i id="redditIcon" class="huge search icon"></i>
         <h1>Search!</h1>
         <p class="register-text">To active our Reddit feed, please, use our searchbar to retrive desired data.</p>
       </div>
@@ -79,8 +79,8 @@ containing a certain word or phrase-->
           <% }); %>
       </div>
       <!-- this is the collumn where the html will be appended to  -->
-      <div id="redditColumn" class ="ui tab attached segmet greyBG redditColumn" data-tab="reddit">
-        <i id="instaIcon" class="huge search icon"></i>
+      <div id="redditContainer" class ="ui tab attached segmet greyBG redditColumn" data-tab="reddit">
+        <i id="redditIcon" class="huge search icon"></i>
         <h1>Search!</h1>
         <p class="register-text">To active our Reddit feed, please, use our searchbar to retrive desired data.</p>
       </div>

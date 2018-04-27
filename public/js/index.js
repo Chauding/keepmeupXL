@@ -16,8 +16,8 @@ Index.load = function(){
              data: requestData,
              success: function(response) {
                $('#twitterColumn').empty();
-                $('.twitterColumn').transition('pulse');
                $('#twitterColumn').html(response);
+               $('#twitterColumn').transition('pulse');
 
             },
             error: function(data) {
@@ -102,6 +102,7 @@ Index.getInstagramResults = function () {
   });
 }
 Index.settings = function (){
+  $(".ui.search").addClass('lab-hidden');
   $('.ui.dropdown').dropdown();
   $('.editButton').on('click', function(){
     $('.ui.form .field').removeClass('disabled');

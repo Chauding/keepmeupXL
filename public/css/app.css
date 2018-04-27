@@ -13,6 +13,7 @@ body {
 .header-search{
   display: block !important;
   margin-left: auto !important;
+  padding-left: 14em !important;
 }
 .center-block{
   display: block !important;
@@ -36,6 +37,7 @@ body {
 
 #navBar{
     background-color: #eb531c;
+    height: 64px !important;
 }
 
 #privacy, #settings, #register{
@@ -65,13 +67,11 @@ body {
 #twitterColumn, #redditContainer, #instaColumn{
     height: 70vh;
     overflow-y: auto;
-    padding-right: 1em;
-    padding-left: 1em;
 }
 #insta, #twitterColumn, #redditContainer{
   padding: 0px !important;
 }
-#instaIcon {
+#instaIcon, #redditIcon {
     margin-top:30vh;
 }
 .centered-heading {
